@@ -24,7 +24,7 @@ input_data = extract_input_data(2024, 2, "Day2.txt")
 
 ### Part A ###
 def is_negative(num: int) -> bool:
-    """ Return True if num is negative, else True """
+    """ Return True if num is negative, else False """
     return num < 0
 
 
