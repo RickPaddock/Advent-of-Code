@@ -38,7 +38,7 @@ def is_safe(nums):
     return result
 
 
-# Loop list of intengers and append 1 or 0 to safe_result list for each
+# Loop list of integers and append 1 or 0 to safe_result list for each
 safe_result = []
 for nums in input_data:
     safe_result.append(is_safe(nums))
