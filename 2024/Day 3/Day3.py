@@ -19,4 +19,4 @@ print("Part A answer:", sum(multiplied_numbers(all_lines))) # 178794710
 # Split list by 'do' & removed those starting n't (i.e. don't). Put back together as string
 do_lines = "".join(i for i in all_lines.split("do") if i[0:3] != "n't")
 
-print("Part B answer:", sum(multiplied_numbers(do_lines))) # 178794710
+print("Part B answer:", sum(multiplied_numbers(do_lines))) # 76729637
