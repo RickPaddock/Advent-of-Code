@@ -1,7 +1,7 @@
 
 import re
 
-with open('./2024/Day 3/input data/Day3.txt', 'r') as f:
+with open('./2024/Day 3/input data/source_input.txt', 'r') as f:
     lines = f.readlines()
 
 # Pull all lines together as one

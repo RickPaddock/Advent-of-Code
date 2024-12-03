@@ -17,9 +17,8 @@ def extract_input_data(year, day, text_file):
         raise Exception(f"Failed to fetch file. Status code: {response.status_code}")
 
 
-#input_data = extract_input_data(2024, 2, "Day2_test.txt")
-input_data = extract_input_data(2024, 2, "Day2.txt")
-
+input_data = extract_input_data(2024, 2, "Day2_test.txt")
+#input_data = extract_input_data(2024, 2, "Day2.txt")
 
 
 ### Part A ###
