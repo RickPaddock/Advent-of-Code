@@ -1,4 +1,3 @@
-
 import re
 
 with open('./2024/Day 3/input data/source_input.txt', 'r') as f:

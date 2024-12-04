@@ -1,8 +1,8 @@
 import requests
 
 # Source text file
-#text_file = "Day1_test.txt"
-text_file = "Day1.txt"
+#text_file = "source_input_test.txt"
+text_file = "source_input.txt"
 source_data_loc = f"https://raw.githubusercontent.com/RickPaddock/Advent-of-Code/refs/heads/main/2024/Day 1/input data/{text_file}"
 
 # Read text file
