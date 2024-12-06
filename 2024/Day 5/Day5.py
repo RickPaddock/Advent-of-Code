@@ -66,4 +66,4 @@ for page in pages:
         bad_middle.append(get_middle(page_reordered_str))
 
 
-print("Answer B:", sum(bad_middle))
+print("Answer B:", sum(bad_middle)) # 4077
