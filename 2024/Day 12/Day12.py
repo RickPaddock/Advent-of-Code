@@ -68,7 +68,7 @@ print("PART A:",sum([len(plot)*sum([perim_dict[i] for i in plot]) for plot in su
 
 
 # PART B - Now interested in whole fence, not just the singular perimiters
-# For all plots, scan via the X-axis to put top/bottom fences, then Y for left/right
+# For all plots, scan via the Y-axis to put top/bottom fences, then X for left/right
 cumulative = 0
 for plot in success_plots:
     fence = 0
