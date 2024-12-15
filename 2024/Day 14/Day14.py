@@ -59,20 +59,8 @@ def robot_velocity(robot):
 
 
 def move_robot(tall, wide, start_xy, vel_xy, iterations):
-    move_to_x = start_xy[0]
-    move_to_y = start_xy[1]
-    for _ in range(iterations):
-        move_to_x = int(move_to_x) + int(vel_xy[0])
-        move_to_y = int(move_to_y) + int(vel_xy[1])
-        # Loop to other side of lobby upon exit
-        if move_to_x >= wide:
-            move_to_x = move_to_x - wide
-        elif move_to_x < 0:
-            move_to_x = wide + move_to_x
-        if move_to_y >= tall:
-            move_to_y = move_to_y - tall
-        elif move_to_y < 0:
-            move_to_y = tall + move_to_y
+    move_to_x = (int(start_xy[0]) + (int(vel_xy[0]) * iterations)) % wide
+    move_to_y = (int(start_xy[1]) + (int(vel_xy[1]) * iterations)) % tall
     final_xy = (move_to_x, move_to_y)
     return final_xy
 
@@ -98,4 +86,21 @@ def count_robot_per_quad(all_robots, four_quadrants):
 print("PART A:",math.prod(count_robot_per_quad(all_robots, four_quadrants)))
 
 
+## PART B ##
+# I noticed there was a pattern forming every 101 moved starting at position 22 
+with open(f"./input data/find_tree.txt", 'w') as f:
+    for moves in range(22, 10000, 101):  
+        print(f"Iteration {moves}", file=f)
+        all_robots = []
+        for robot in robots:
+            robot_start_xy = robot_starting(robot)
+            robot_vel_xy = robot_velocity(robot)
+            robot_moved = move_robot(tall, wide, robot_start_xy, robot_vel_xy, moves)
+            all_robots.append(robot_moved)
+        for y in range(tall):
+            row = ""
+            for x in range(wide):
+                row += '#' if (x, y) in all_robots else ' '
+            print(row, file=f)
 
+# Tree found at 6587
