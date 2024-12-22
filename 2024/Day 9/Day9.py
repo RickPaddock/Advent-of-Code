@@ -11,6 +11,8 @@ for n,num in enumerate(nums):
         num_multi = str((int(n)//2)) if (n+1)%2!=0 else "."
         diskblock.append(num_multi)
 
+print(diskblock)
+
 # All index locations of "."
 def indices(lst, element):
     result = []
@@ -26,10 +28,14 @@ spaces_lst = indices(diskblock, ".")
 
 no_missing = [i for i in diskblock if i != "."]
 
+print(spaces_lst)
+
 # Move last item to next "." index position. 
 # More efficient using index position than loop of large no_missing list
 for inx in spaces_lst:
     no_missing.insert(inx,no_missing[-1])
     no_missing.pop()
+    #print(no_missing)
 
 print("Answer A:", sum([i*int(num) for i,num in enumerate(no_missing)]))
+
